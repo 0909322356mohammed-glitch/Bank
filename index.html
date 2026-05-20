@@ -9,67 +9,64 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: linear-gradient(to bottom, #6AAE4A 0%, #4A8F2F 100%);
+  background: linear-gradient(to bottom, #7ED321 0%, #5CB85C 100%);
   min-height: 100vh;
   color: white;
-  padding: 20px 12px 120px;
+  padding: 20px 0 100px;
 }
 
 .container {
-  max-width: 500px;
+  max-width: 420px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .check {
-  width: 85px;
-  height: 85px;
+  width: 95px;
+  height: 95px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px auto 15px;
+  margin: 15px auto 18px;
 }
 
 .check svg {
-  width: 48px;
-  height: 48px;
-  stroke: #4A8F2F;
-  stroke-width: 3;
+  width: 55px;
+  height: 55px;
+  stroke: #3CB371;
+  stroke-width: 4;
+  fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  fill: none;
 }
 
 h2 {
   font-size: 1.4rem;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   font-weight: 500;
   text-align: center;
 }
 
 .box {
-  border: 1px solid rgba(255,255,255,0.9);
-  border-radius: 6px;
+  background: rgba(255,255,255,0.22);
+  border: 1.5px solid rgba(255,255,255,0.95);
+  border-radius: 8px;
   margin-bottom: 5px;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 12px;
-  height: 44px;
-  background: transparent;
+  padding: 0 14px;
+  height: 45px;
 }
 
-.label {
-  font-weight: 400;
-  font-size: 0.9rem;
-}
-
-.value-input {
+.box input {
   background: transparent;
   border: none;
   color: white;
@@ -80,27 +77,62 @@ h2 {
   outline: none;
 }
 
-.value-input::placeholder {
-  color: rgba(255,255,255,0.8);
+.label {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.amount-box {
+  background: #2E7D32;
+  border: 1.5px solid rgba(255,255,255,0.95);
+  border-radius: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px;
+  height: 45px;
+  position: relative;
+}
+
+.amount-box::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #2E7D32;
+}
+
+.amount-box input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  text-align: left;
+  direction: ltr;
+  width: 65%;
+  outline: none;
 }
 
 .btn {
-  background: linear-gradient(to bottom, #7BC34B 0%, #5A9C38 100%);
-  border: 1px solid rgba(255,255,255,0.5);
+  background: linear-gradient(to bottom, #9CCC65 0%, #66BB6A 100%);
+  border: 1px solid rgba(255,255,255,0.7);
   border-radius: 6px;
   color: white;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 11px 0;
+  font-size: 0.95rem;
   font-weight: 600;
   width: 140px;
-  margin: 25px auto;
+  margin: 22px auto;
   display: block;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.btn:active {
-  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .footer {
@@ -108,28 +140,27 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.1);
-  border-top: 1px solid rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.12);
 }
 
-.footer-top {
+.footer-actions {
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 12px 0;
   font-size: 0.85rem;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
+  border-top: 1.5px solid rgba(255,255,255,0.7);
+  border-bottom: 1.5px solid rgba(255,255,255,0.7);
 }
 
-.footer-mid {
+.footer-actions span {
   display: flex;
-  justify-content: space-between;
-  padding: 12px 20px;
-  font-size: 0.8rem;
+  align-items: center;
+  gap: 5px;
 }
 
 .footer-bottom {
-  padding: 6px 0;
-  font-size: 0.7rem;
+  padding: 7px 0;
+  font-size: 0.72rem;
   text-align: center;
   opacity: 0.9;
 }
@@ -146,54 +177,50 @@ h2 {
   <h2>تحويلات</h2>
   
   <div class="box">
-    <input type="text" class="value-input" value="20004937897">
     <span class="label">رقم العملية</span>
+    <input type="text" value="20004937897">
   </div>
   
   <div class="box">
-    <input type="text" class="value-input" value="11-Aug-2024 17:29:28">
     <span class="label">التاريخ و الزمن</span>
+    <input type="text" value="11-Aug-2024 17:29:28">
   </div>
   
   <div class="box">
-    <input type="text" class="value-input" value="0683 0172 8665 0001">
     <span class="label">من حساب</span>
+    <input type="text" value="0683 0172 8665 0001">
   </div>
   
   <div class="box">
-    <input type="text" class="value-input" value="0293 1168 3274 0001">
     <span class="label">الى حساب</span>
+    <input type="text" value="0293 1168 3274 0001">
   </div>
   
   <div class="box">
-    <input type="text" class="value-input" value="ياسر عبدالرحمن عبدالله ادريس">
     <span class="label">اسم المرسل اليه</span>
+    <input type="text" value="ياسر عبدالرحمن عبدالله ادريس">
   </div>
   
   <div class="box">
-    <input type="text" class="value-input" value="N/A">
     <span class="label">رقم الموبايل</span>
+    <input type="text" value="N/A">
   </div>
   
   <div class="box">
-    <input type="text" class="value-input" value="N/A">
     <span class="label">التعليق</span>
+    <input type="text" value="N/A">
   </div>
   
-  <div class="box">
-    <input type="text" class="value-input" value="28,000.00">
+  <div class="amount-box">
     <span class="label">المبلغ</span>
+    <input type="text" value="28,000.00">
   </div>
   
   <button class="btn">موافق</button>
 </div>
 
 <div class="footer">
-  <div class="footer-mid">
-    <span>📱 إضافة</span>
-    <span>💳 تحويل</span>
-  </div>
-  <div class="footer-top">
+  <div class="footer-actions">
     <span>🔗 مشاركة</span>
     <span>🖨️ طباعة</span>
     <span>⬇️ تحميل</span>
