@@ -9,37 +9,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Cairo", "Tajawal", Arial, sans-serif;
 }
 
 body {
-  background: linear-gradient(to bottom, #7ED321 0%, #5CB85C 100%);
+  background: linear-gradient(to bottom, #8BC34A 0%, #689F38 100%);
   min-height: 100vh;
   color: white;
-  padding: 20px 0 100px;
+  padding-bottom: 90px;
 }
 
 .container {
   max-width: 420px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
+/* علامة الصح */
 .check {
-  width: 95px;
-  height: 95px;
+  width: 100px;
+  height: 100px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px auto 18px;
+  margin: 20px auto 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .check svg {
-  width: 55px;
-  height: 55px;
-  stroke: #3CB371;
+  width: 60px;
+  height: 60px;
+  stroke: #4CAF50;
   stroke-width: 4;
   fill: none;
   stroke-linecap: round;
@@ -47,175 +49,198 @@ body {
 }
 
 h2 {
-  font-size: 1.4rem;
-  margin-bottom: 18px;
+  font-size: 22px;
+  margin-bottom: 20px;
   font-weight: 500;
   text-align: center;
 }
 
+/* الصناديق البيضاء */
 .box {
-  background: rgba(255,255,255,0.22);
-  border: 1.5px solid rgba(255,255,255,0.95);
-  border-radius: 8px;
-  margin-bottom: 5px;
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.9);
+  border-radius: 6px;
+  margin-bottom: 6px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  padding: 0 14px;
-  height: 45px;
+  padding: 0 12px;
+  height: 48px;
 }
 
 .box input {
   background: transparent;
   border: none;
   color: white;
-  font-size: 0.9rem;
+  font-size: 15px;
   text-align: left;
   direction: ltr;
-  width: 65%;
+  width: 60%;
   outline: none;
 }
 
 .label {
-  font-size: 0.9rem;
+  font-size: 15px;
   font-weight: 400;
 }
 
+/* صندوق المبلغ */
 .amount-box {
   background: #2E7D32;
-  border: 1.5px solid rgba(255,255,255,0.95);
-  border-radius: 8px;
-  margin-bottom: 5px;
+  border: 2px solid rgba(255,255,255,0.9);
+  border-radius: 6px;
+  margin-bottom: 6px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  padding: 0 14px;
-  height: 45px;
+  padding: 0 12px;
+  height: 48px;
   position: relative;
 }
 
 .amount-box::before {
   content: '';
   position: absolute;
-  left: -10px;
+  left: -12px;
   top: 50%;
   transform: translateY(-50%);
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #2E7D32;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #2E7D32;
 }
 
 .amount-box input {
   background: transparent;
   border: none;
   color: white;
-  font-size: 0.9rem;
+  font-size: 15px;
   text-align: left;
   direction: ltr;
-  width: 65%;
+  width: 60%;
   outline: none;
 }
 
+/* زر موافق */
 .btn {
-  background: linear-gradient(to bottom, #9CCC65 0%, #66BB6A 100%);
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: 6px;
-  color: white;
-  padding: 11px 0;
-  font-size: 0.95rem;
-  font-weight: 600;
-  width: 140px;
-  margin: 22px auto;
+  background: linear-gradient(to bottom, #AED581 0%, #81C784 100%);
+  border: 2px solid white;
+  border-radius: 8px;
+  color: #2E7D32;
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: 700;
+  width: 160px;
+  margin: 30px auto;
   display: block;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
+/* الفوتر */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.12);
+  background: #6B8E23;
 }
 
 .footer-actions {
   display: flex;
   justify-content: space-around;
-  padding: 12px 0;
-  font-size: 0.85rem;
-  border-top: 1.5px solid rgba(255,255,255,0.7);
-  border-bottom: 1.5px solid rgba(255,255,255,0.7);
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+  border-top: 2px solid rgba(255,255,255,0.6);
+  border-bottom: 2px solid rgba(255,255,255,0.6);
 }
 
 .footer-actions span {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .footer-bottom {
-  padding: 7px 0;
-  font-size: 0.72rem;
+  padding: 8px 0;
+  font-size: 12px;
   text-align: center;
-  opacity: 0.9;
+  opacity: 0.95;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px 0;
+  font-size: 24px;
 }
 </style>
 </head>
 <body>
 <div class="container">
+  <div class="footer-icons">
+    <div style="text-align:center;">
+      <div>👤+</div>
+      <div style="font-size:12px;">إضافة</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="border:2px solid white; border-radius:50%; width:30px; height:30px; line-height:26px; margin:auto;">SDG</div>
+      <div style="font-size:12px;">تحويل</div>
+    </div>
+  </div>
+
   <div class="check">
     <svg viewBox="0 0 24 24">
       <path d="M5 12l5 5L20 7"></path>
     </svg>
   </div>
-  
+
   <h2>تحويلات</h2>
-  
+
   <div class="box">
     <span class="label">رقم العملية</span>
-    <input type="text" value="20004937897">
+    <input type="text" value="20004937897" readonly>
   </div>
-  
+
   <div class="box">
     <span class="label">التاريخ و الزمن</span>
-    <input type="text" value="11-Aug-2024 17:29:28">
+    <input type="text" value="11-Aug-2024 17:29:28" readonly>
   </div>
-  
+
   <div class="box">
     <span class="label">من حساب</span>
-    <input type="text" value="0683 0172 8665 0001">
+    <input type="text" value="0683 0172 8665 0001" readonly>
   </div>
-  
+
   <div class="box">
     <span class="label">الى حساب</span>
-    <input type="text" value="0293 1168 3274 0001">
+    <input type="text" value="0293 1168 3274 0001" readonly>
   </div>
-  
+
   <div class="box">
     <span class="label">اسم المرسل اليه</span>
-    <input type="text" value="ياسر عبدالرحمن عبدالله ادريس">
+    <input type="text" value="ياسر عبدالرحمن عبدالله ادريس" readonly>
   </div>
-  
+
   <div class="box">
     <span class="label">رقم الموبايل</span>
-    <input type="text" value="N/A">
+    <input type="text" value="N/A" readonly>
   </div>
-  
+
   <div class="box">
     <span class="label">التعليق</span>
-    <input type="text" value="N/A">
+    <input type="text" value="N/A" readonly>
   </div>
-  
+
   <div class="amount-box">
     <span class="label">المبلغ</span>
-    <input type="text" value="28,000.00">
+    <input type="text" value="28,000.00" readonly>
   </div>
-  
+
   <button class="btn">موافق</button>
 </div>
 
