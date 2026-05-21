@@ -5,60 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>إيصال تحويل</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Cairo", "Tajawal", Arial, sans-serif;
+  font-family: 'Cairo', Arial, sans-serif;
 }
 
 body {
   background: linear-gradient(to bottom, #8BC34A 0%, #689F38 100%);
   min-height: 100vh;
   color: white;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
 }
 
 .container {
-  max-width: 420px;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 15px;
 }
 
 /* علامة الصح */
-.check {
-  width: 100px;
-  height: 100px;
+.check-circle {
+  width: 105px;
+  height: 105px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px auto 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 25px auto 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.check svg {
-  width: 60px;
-  height: 60px;
+.check-circle svg {
+  width: 65px;
+  height: 65px;
   stroke: #4CAF50;
-  stroke-width: 4;
+  stroke-width: 5;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 h2 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 22px;
+  font-weight: 600;
   text-align: center;
 }
 
-/* الصناديق البيضاء */
-.box {
-  background: rgba(255,255,255,0.25);
-  border: 2px solid rgba(255,255,255,0.9);
+/* كل الصناديق بما فيها المبلغ */
+.row {
+  background: rgba(255,255,255,0.28);
+  border: 2px solid rgba(255,255,255,0.95);
   border-radius: 6px;
   margin-bottom: 6px;
   display: flex;
@@ -69,131 +71,109 @@ h2 {
   height: 48px;
 }
 
-.box input {
+.row input {
   background: transparent;
   border: none;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   text-align: left;
   direction: ltr;
-  width: 60%;
+  width: 58%;
   outline: none;
 }
 
 .label {
-  font-size: 15px;
-  font-weight: 400;
-}
-
-/* صندوق المبلغ */
-.amount-box {
-  background: #2E7D32;
-  border: 2px solid rgba(255,255,255,0.9);
-  border-radius: 6px;
-  margin-bottom: 6px;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 12px;
-  height: 48px;
-  position: relative;
-}
-
-.amount-box::before {
-  content: '';
-  position: absolute;
-  left: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-right: 12px solid #2E7D32;
-}
-
-.amount-box input {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 15px;
-  text-align: left;
-  direction: ltr;
-  width: 60%;
-  outline: none;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /* زر موافق */
-.btn {
+.btn-ok {
   background: linear-gradient(to bottom, #AED581 0%, #81C784 100%);
-  border: 2px solid white;
-  border-radius: 8px;
+  border: 3px solid white;
+  border-radius: 10px;
   color: #2E7D32;
   padding: 12px 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  width: 160px;
-  margin: 30px auto;
+  width: 170px;
+  margin: 35px auto;
   display: block;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
-/* الفوتر */
+/* الفوتر العلوي */
+.top-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px 0;
+}
+
+.top-icons div {
+  text-align: center;
+  font-size: 12px;
+}
+
+.icon-circle {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  margin: 0 auto 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* الفوتر السفلي */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #6B8E23;
+  background: #556B2F;
 }
 
-.footer-actions {
+.footer-menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
-  font-size: 14px;
-  border-top: 2px solid rgba(255,255,255,0.6);
-  border-bottom: 2px solid rgba(255,255,255,0.6);
+  padding: 12px 0;
+  font-size: 15px;
+  border-top: 2px solid rgba(255,255,255,0.7);
+  border-bottom: 2px solid rgba(255,255,255,0.7);
 }
 
-.footer-actions span {
+.footer-menu span {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.footer-bottom {
+.footer-copy {
   padding: 8px 0;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
   opacity: 0.95;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px 0;
-  font-size: 24px;
 }
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="footer-icons">
-    <div style="text-align:center;">
-      <div>👤+</div>
-      <div style="font-size:12px;">إضافة</div>
-    </div>
-    <div style="text-align:center;">
-      <div style="border:2px solid white; border-radius:50%; width:30px; height:30px; line-height:26px; margin:auto;">SDG</div>
-      <div style="font-size:12px;">تحويل</div>
-    </div>
-  </div>
 
-  <div class="check">
+<div class="top-icons">
+  <div>
+    <div>👤+</div>
+    <div>إضافة</div>
+  </div>
+  <div>
+    <div class="icon-circle">SDG</div>
+    <div>تحويل</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="check-circle">
     <svg viewBox="0 0 24 24">
       <path d="M5 12l5 5L20 7"></path>
     </svg>
@@ -201,58 +181,59 @@ h2 {
 
   <h2>تحويلات</h2>
 
-  <div class="box">
+  <div class="row">
     <span class="label">رقم العملية</span>
     <input type="text" value="20004937897" readonly>
   </div>
 
-  <div class="box">
+  <div class="row">
     <span class="label">التاريخ و الزمن</span>
     <input type="text" value="11-Aug-2024 17:29:28" readonly>
   </div>
 
-  <div class="box">
+  <div class="row">
     <span class="label">من حساب</span>
     <input type="text" value="0683 0172 8665 0001" readonly>
   </div>
 
-  <div class="box">
+  <div class="row">
     <span class="label">الى حساب</span>
     <input type="text" value="0293 1168 3274 0001" readonly>
   </div>
 
-  <div class="box">
+  <div class="row">
     <span class="label">اسم المرسل اليه</span>
     <input type="text" value="ياسر عبدالرحمن عبدالله ادريس" readonly>
   </div>
 
-  <div class="box">
+  <div class="row">
     <span class="label">رقم الموبايل</span>
     <input type="text" value="N/A" readonly>
   </div>
 
-  <div class="box">
+  <div class="row">
     <span class="label">التعليق</span>
     <input type="text" value="N/A" readonly>
   </div>
 
-  <div class="amount-box">
+  <div class="row">
     <span class="label">المبلغ</span>
     <input type="text" value="28,000.00" readonly>
   </div>
 
-  <button class="btn">موافق</button>
+  <button class="btn-ok">موافق</button>
 </div>
 
 <div class="footer">
-  <div class="footer-actions">
+  <div class="footer-menu">
     <span>🔗 مشاركة</span>
     <span>🖨️ طباعة</span>
     <span>⬇️ تحميل</span>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-copy">
     © 2024 بنك الخرطوم/بنكك حساب
   </div>
 </div>
+
 </body>
 </html>
