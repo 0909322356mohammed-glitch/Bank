@@ -80,7 +80,7 @@ h2 {
   color: #ffffff; 
   font-weight: 400;
   text-align: right;
-  direction: rtl;
+  direction: ltr;
   background: transparent;
   border: none;
   outline: none;
@@ -206,7 +206,7 @@ h2 {
   
   <div class="row">
     <span class="label">التاريخ و الزمن</span>
-    <input type="text" class="value-input" value="25-Apr-2026 15:12:25">
+    <input type="text" class="value-input" id="datetime" readonly>
   </div>
   
   <div class="row">
@@ -240,7 +240,7 @@ h2 {
   </div>
 </div>
 
-<button class="bankak-button">موافق</button>
+<button class="bankak-button" id="btnOk">موافق</button>
 
 <div class="top-actions">
   <button class="action-btn">
@@ -273,6 +273,49 @@ h2 {
     2024 بنك الخرطوم | بنك حساب
   </div>
 </div>
+
+<script>
+let interval;
+let isRunning = true;
+
+function updateDateTime() {
+  const now = new Date();
+  const day = String(now.getDate()).padStart(2, '0');
+  const month = now.toLocaleString('en', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  
+  // الصيغة: Apr-2026 15:12:25-25
+  document.getElementById('datetime').value = `${month}-${year} ${hours}:${minutes}:${seconds}-${day}`;
+}
+
+// شغل الساعة اول ما الصفحة تفتح
+updateDateTime();
+interval = setInterval(updateDateTime, 1000);
+
+// التحكم بزر موافق
+let clickCount = 0;
+document.getElementById('btnOk').addEventListener('click', function() {
+  clickCount++;
+  
+  if (clickCount === 1) {
+    clearInterval(interval);
+    isRunning = false;
+  }
+  
+  setTimeout(() => { clickCount = 0; }, 500);
+});
+
+document.getElementById('btnOk').addEventListener('dblclick', function() {
+  if (!isRunning) {
+    updateDateTime();
+    interval = setInterval(updateDateTime, 1000);
+    isRunning = true;
+  }
+});
+</script>
 
 </body>
 </html>
