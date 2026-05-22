@@ -5,17 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>إيصال تحويل</title>
 
-<!-- خط Cairo من قوقل -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap">
-<!-- أيقونات FontAwesome للصح -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-/* الخلفية المتدرجة للتطبيق كاملاً */
 body { 
   background: linear-gradient(to bottom, #52B743 0%, #297E25 100%); 
   margin: 0; 
-  padding: 20px; 
+  padding: 20px 20px 80px 20px; 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
@@ -24,7 +21,7 @@ body {
   direction: rtl;
 }
 
-/* تصميم الدائرة البيضاء وعلامة الصح */
+/* دائرة الصح */
 .success-circle { 
   width: 90px; 
   height: 90px; 
@@ -49,7 +46,7 @@ h2 {
   margin: 0 0 20px 0;
 }
 
-/* الحاوية الكبيرة للمستطيلات */
+/* الجدول */
 .bankak-container { 
   width: 100%; 
   max-width: 360px; 
@@ -60,24 +57,20 @@ h2 {
   background: transparent;
 } 
 
-/* الأسطر الداخلية */
 .row { 
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
   padding: 12px 15px; 
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
-  letter-spacing: 0px;
 } 
 
-/* إزالة الخط الفاصل من السطر الأخير */
 .row:last-child { 
   border-bottom: none; 
 } 
 
-/* نصوص القيم والعناوين */
 .label { 
   color: #ffffff; 
   font-weight: 500;
@@ -90,7 +83,7 @@ h2 {
   direction: ltr;
 }
 
-/* زر بنك */
+/* زر موافق - عدل فيهو براحتك */
 .bankak-button { 
   background: linear-gradient(to bottom, #60c43d 0%, #3b9825 100%); 
   border: 1.5px solid #ffffff; 
@@ -101,10 +94,39 @@ h2 {
   font-size: 18px;
   font-weight: 700;
   width: 170px;
-  margin: 30px auto;
+  margin: 30px auto 0 auto;
   display: block;
   cursor: pointer;
   font-family: 'Cairo', sans-serif;
+}
+
+/* الفوتر التحت: مشاركة طباعة تحميل */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.15);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+.footer button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.footer i {
+  font-size: 16px;
 }
 </style>
 </head>
@@ -159,6 +181,18 @@ h2 {
 </div>
 
 <button class="bankak-button">موافق</button>
+
+<div class="footer">
+  <button onclick="navigator.share && navigator.share({title: 'إيصال تحويل', text: 'تفاصيل التحويل'})">
+    <i class="fa-solid fa-share-nodes"></i> مشاركة
+  </button>
+  <button onclick="window.print()">
+    <i class="fa-solid fa-print"></i> طباعة
+  </button>
+  <button onclick="window.scrollTo(0,0); window.print()">
+    <i class="fa-solid fa-download"></i> تحميل
+  </button>
+</div>
 
 </body>
 </html>
