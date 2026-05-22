@@ -12,7 +12,7 @@
 body { 
   background: linear-gradient(to bottom, #52B743 0%, #297E25 100%); 
   margin: 0; 
-  padding: 20px 20px 80px 20px; 
+  padding: 20px 20px 140px 20px; 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
@@ -21,7 +21,6 @@ body {
   direction: rtl;
 }
 
-/* دائرة الصح */
 .success-circle { 
   width: 90px; 
   height: 90px; 
@@ -46,7 +45,6 @@ h2 {
   margin: 0 0 20px 0;
 }
 
-/* الجدول */
 .bankak-container { 
   width: 100%; 
   max-width: 360px; 
@@ -75,29 +73,28 @@ h2 {
   color: #ffffff; 
   font-weight: 500;
   flex-shrink: 0;
+  width: 40%;
 } 
 
-/* الحقل القابل للتعديل - العمود اليمين */
 .value-input { 
   color: #ffffff; 
   font-weight: 400;
-  text-align: left;
-  direction: ltr;
+  text-align: right;
+  direction: rtl;
   background: transparent;
   border: none;
   outline: none;
-  width: 60%;
+  width: 58%;
   font-family: 'Cairo', sans-serif;
   font-size: 15px;
 }
 
 .value-input:focus {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
   border-radius: 4px;
   padding: 2px 4px;
 }
 
-/* زر موافق */
 .bankak-button { 
   background: linear-gradient(to bottom, #60c43d 0%, #3b9825 100%); 
   border: 1.5px solid #ffffff; 
@@ -114,16 +111,56 @@ h2 {
   font-family: 'Cairo', sans-serif;
 }
 
-/* الفوتر */
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 360px;
+  margin: 25px 0 15px 0;
+  padding: 0 10px;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.action-btn i {
+  font-size: 22px;
+}
+
+.sdg-circle {
+  width: 28px;
+  height: 28px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.15);
-  border-top: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.2);
+}
+
+.footer-actions {
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
   padding: 12px 0;
 }
 
@@ -134,13 +171,22 @@ h2 {
   font-family: 'Cairo', sans-serif;
   font-size: 14px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
 }
 
 .footer i {
-  font-size: 16px;
+  font-size: 20px;
+}
+
+.footer-copy {
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  padding: 10px 0;
+  opacity: 0.9;
 }
 </style>
 </head>
@@ -154,58 +200,78 @@ h2 {
 
 <div class="bankak-container">
   <div class="row">
-    <input type="text" class="value-input" value="20021762155">
     <span class="label">رقم العملية</span>
+    <input type="text" class="value-input" value="20742358886">
   </div>
   
   <div class="row">
-    <input type="text" class="value-input" value="28-Apr-2026 20:20:46">
-    <span class="label">التاريخ والزمن</span>
+    <span class="label">التاريخ و الزمن</span>
+    <input type="text" class="value-input" value="25-Apr-2026 15:12:25">
   </div>
   
   <div class="row">
-    <input type="text" class="value-input" value="0683 0172 8665 0001">
     <span class="label">من حساب</span>
+    <input type="text" class="value-input" value="1003 0771 9526 0001">
   </div>
   
   <div class="row">
-    <input type="text" class="value-input" value="0293 1168 3274 0001">
     <span class="label">الى حساب</span>
+    <input type="text" class="value-input" value="0793 0312 1701 0001">
   </div>
   
   <div class="row">
-    <input type="text" class="value-input" value="ياسر عبدالرحمن عبدالله ادريس">
     <span class="label">اسم المرسل اليه</span>
+    <input type="text" class="value-input" value="عبد الله حسن عبد الله محمد">
   </div>
   
   <div class="row">
-    <input type="text" class="value-input" value="N/A">
     <span class="label">رقم الموبايل</span>
-  </div>
-  
-  <div class="row">
     <input type="text" class="value-input" value="N/A">
-    <span class="label">التعليق</span>
   </div>
   
   <div class="row">
-    <input type="text" class="value-input" value="28,000.00">
+    <span class="label">التعليق</span>
+    <input type="text" class="value-input" value="محمد ابراهيم">
+  </div>
+  
+  <div class="row">
     <span class="label">المبلغ</span>
+    <input type="text" class="value-input" value="70,000.00">
   </div>
 </div>
 
 <button class="bankak-button">موافق</button>
 
+<div class="top-actions">
+  <button class="action-btn">
+    <div class="sdg-circle">SDG</div>
+    <span>تحويل مرة أخرى</span>
+  </button>
+  
+  <button class="action-btn">
+    <i class="fa-solid fa-user-plus"></i>
+    <span>إضافة مستفيد</span>
+  </button>
+</div>
+
 <div class="footer">
-  <button onclick="navigator.share && navigator.share({title: 'إيصال تحويل', text: 'تفاصيل التحويل'})">
-    <i class="fa-solid fa-share-nodes"></i> مشاركة
-  </button>
-  <button onclick="window.print()">
-    <i class="fa-solid fa-print"></i> طباعة
-  </button>
-  <button onclick="window.print()">
-    <i class="fa-solid fa-download"></i> تحميل
-  </button>
+  <div class="footer-actions">
+    <button onclick="window.print()">
+      <i class="fa-solid fa-download"></i>
+      <span>تحميل</span>
+    </button>
+    <button onclick="window.print()">
+      <i class="fa-solid fa-print"></i>
+      <span>طباعة</span>
+    </button>
+    <button onclick="navigator.share && navigator.share({title: 'إيصال تحويل', text: 'تفاصيل التحويل'})">
+      <i class="fa-solid fa-share-nodes"></i>
+      <span>مشاركة</span>
+    </button>
+  </div>
+  <div class="footer-copy">
+    2024 بنك الخرطوم | بنك حساب
+  </div>
 </div>
 
 </body>
